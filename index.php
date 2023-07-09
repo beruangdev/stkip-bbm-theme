@@ -1,5 +1,4 @@
 <?php get_header() ?>
-
 <?php if (str_starts_with($_SERVER['REQUEST_URI'], '/articles')) : ?>
   <div class="mt-28">
     <?php get_template_part('archive-post'); ?>
