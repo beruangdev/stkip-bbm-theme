@@ -39,3 +39,5 @@ function register_announcement_post_type()
   register_post_type('announcement', $args);
 }
 add_action('init', 'register_announcement_post_type');
+
+

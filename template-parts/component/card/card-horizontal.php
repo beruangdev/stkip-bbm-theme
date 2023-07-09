@@ -10,7 +10,7 @@
   <?php endif; ?>
 
   <div class="post-thumbnail">
-    <a href="<?= esc_url(get_permalink()); ?>">
+    <a href="<?= esc_url(get_permalink()); ?>" title="<?php the_title_attribute(); ?>">
       <?php if (has_post_thumbnail()) : ?>
         <?= get_the_post_thumbnail(get_the_ID(), 'medium', ['class' => 'rounded-lg w-28 md:w-40 aspect-[16/12] object-cover object-center']); ?>
       <?php else : ?>
@@ -22,16 +22,15 @@
     <div>
       <?php if (has_category()) : ?>
         <div class="flex gap-2 items-center">
-          <span class="text-primary-500">//</span>
           <?php $categories = get_the_category(); ?>
           <?php foreach ($categories as $key => $category) : ?>
             <?php if ($key + 1 <= 3) : ?>
-              <a href="<?= esc_url(get_category_link($category->term_id)); ?>" class="text-sm"><?= esc_html($category->name); ?></a>
+              <a href="<?= esc_url(get_category_link($category->term_id)); ?>" class="text-sm" title="<?= esc_html($category->name); ?>"><?= esc_html($category->name); ?></a>
             <?php endif; ?>
           <?php endforeach; ?>
         </div>
       <?php endif; ?>
-      <a href="<?= esc_url(get_permalink()); ?>" class="no-underline">
+      <a href="<?= esc_url(get_permalink()); ?>" class="no-underline" title="<?php the_title_attribute(); ?>">
         <h6 class="mb-2"><?= get_the_title(); ?></h6>
       </a>
     </div>
@@ -49,10 +48,22 @@
         </svg>
         <?= human_time_diff(get_the_time('U'), current_time('timestamp')); ?>
       </span>
-
-      <div>
-        <?php the_tags('', ' ', '', 3); ?>
-      </div>
+      <?php if (has_tag()) : ?>
+        <?php
+        $tags = get_the_tags();
+        if ($tags) {
+          $tag_count = count($tags);
+          $max_tags = 3;
+          $tags = array_slice($tags, 0, $max_tags);
+        }
+        ?>
+        <div>
+          #
+          <?php foreach ($tags as $tag) : ?>
+            <a href="<?= get_tag_link($tag->term_id); ?>"> <?= $tag->name; ?></a>
+          <?php endforeach; ?>
+        </div>
+      <?php endif; ?>
     </div>
   </div>
 </div>

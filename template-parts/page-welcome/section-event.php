@@ -6,8 +6,8 @@ $args = array(
 $events_query = new WP_Query($args);
 ?>
 
-<div class="container mb-8">
-  <div class="flex justify-between items-center mb-3">
+<div class="container">
+  <div class="flex justify-between items-center mb-1">
     <h3>Event Kampus</h3>
 
     <a href="<?php echo esc_url(get_post_type_archive_link('event')); ?>" class="group flex items-center gap-2 duration-200  hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-5 py-2 dark:hover:bg-background-950/30 focus:outline-none dark:focus:ring-background-800 no-underline">
@@ -29,12 +29,21 @@ $events_query = new WP_Query($args);
         ?>
           <div class="swiper-slide">
             <div class="flex gap-2">
-              <div class="aspect-square w-[116px] max-w-[116px] min-w-[116px] h-fit bg-primary-700 dark:bg-primary-900 text-white text-center flex flex-col items-center justify-center rounded-md">
+              <div class="aspect-square w-[116px] max-w-[116px] min-w-[116px] h-fit bg-primary-700 dark:bg-primary-900  text-white text-center flex flex-col items-center justify-center rounded-md overflow-hidden relative group">
+                <div class="absolute inset-0 h-full opacity-10 group-hover:opacity-100 duration-300 ">
+                  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="no-underline">
+                    <?php if (has_post_thumbnail()) : ?>
+                      <?= get_the_post_thumbnail(get_the_ID(), 'medium', ['class' => 'rounded-lg object-cover object-top inset-0 h-full w-full']); ?>
+                    <?php else : ?>
+                      <img src="https://via.placeholder.com/150" class="rounded-lg object-cover object-top inset-0 h-full w-full" alt="Placeholder Image">
+                    <?php endif; ?>
+                  </a>
+                </div>
                 <span class="text-sm text-white"><?php echo get_the_date('l'); ?></span>
                 <h5 class="text-white"><?php echo $event_date; ?> <?php echo $event_month; ?></h5>
               </div>
               <div class="flex flex-col justify-between">
-                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="no-underline">
                   <h5><?php the_title(); ?></h5>
                 </a>
                 <div class="flex items-center gap-1">
