@@ -1,0 +1,6 @@
+@layer utilities {
+  div.container,
+  section.container {
+    @apply px-4 lg:max-w-screen-xl mx-auto;
+  }
+}

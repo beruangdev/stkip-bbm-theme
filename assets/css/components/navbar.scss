@@ -1,0 +1,134 @@
+/* Custom styles for the navbar */
+.navbar {
+  @apply py-4;
+
+  &.dark {
+    @apply bg-gray-900;
+  }
+
+  &.light {
+    @apply bg-gray-100;
+  }
+
+  a {
+    @apply py-2 px-4; 
+
+    &.dark {
+      @apply text-white;
+
+      &:hover {
+        @apply text-blue-300;
+      }
+    }
+
+    &.light {
+      @apply text-gray-900;
+
+      &:hover {
+        @apply text-blue-500;
+      }
+    }
+  }
+}
+
+ul.menu > .menu-item > a, ul.menu > .menu-item > svg {
+  @apply text-white;
+}
+
+/* Styles for the primary menu container */
+.top-navbar {
+  ul.menu {
+    @apply flex list-none p-0 m-0;
+  }
+
+  .menu-item {
+    @apply relative mr-4 text-sm font-medium;
+
+    a {
+      @apply no-underline;
+
+      &.dark {
+        @apply text-white;
+
+        &:hover {
+          @apply bg-blue-700;
+        }
+      }
+
+      &.light {
+        @apply text-gray-900;
+
+        &:hover {
+          @apply text-blue-500;
+        }
+      }
+    }
+
+    ul.sub-menu {
+      @apply hidden absolute top-full left-0 bg-white p-4 rounded-lg shadow-md w-max;
+      @apply transition-all duration-300 ease-in-out opacity-0 transform scale-y-0;
+
+      li.menu-item {
+        @apply my-2;
+
+        a {
+          @apply no-underline;
+
+          &.dark {
+            @apply text-white;
+
+            &:hover {
+              @apply bg-blue-700;
+            }
+          }
+
+          &.light {
+            @apply text-gray-900;
+
+            &:hover {
+              @apply text-blue-500;
+            }
+          }
+        }
+      }
+    }
+
+    &:hover > ul.sub-menu {
+      @apply block opacity-100 transform scale-y-100 z-10 shadow-xl;
+    }
+  }
+}
+
+/* Dark mode styles */
+.dark {
+  @apply bg-gray-900;
+
+  .top-navbar {
+    ul.menu {
+      .menu-item {
+        a {
+          &.dark {
+            &:hover {
+              @apply bg-blue-700;
+            }
+          }
+        }
+      }
+
+      ul.sub-menu {
+        @apply bg-gray-800;
+        box-shadow: none;
+
+        li.menu-item {
+          a {
+            &.dark {
+              &:hover {
+                @apply bg-blue-700;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "tailwindcss/base";
+/*
+ * uncomment if adding custom base styles
+ */
+@import "./custom-base-styles";
+
+@import "tailwindcss/components";
+/*
+ * uncomment if adding custom commponents
+ */
+@import "./custom-components";
+
+@import "tailwindcss/utilities";
+/*
+ * uncomment if adding custom utilities
+ */
+@import "./custom-utilities";
+
+@import "./components/navbar.scss";
+
+body.admin-bar {
+  max-height: calc(100vh - 32px);
+}
+
+// #wpadminbar {
+//   @apply hidden;
+// }
