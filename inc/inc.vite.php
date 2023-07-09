@@ -50,6 +50,7 @@ add_action('wp_enqueue_scripts', function () {
 
             // get first key, by default is 'main.js' but it can change
             $manifest_key = array_keys($manifest);
+
             if (isset($manifest_key[0])) {
 
                 // enqueue CSS files
@@ -58,9 +59,9 @@ add_action('wp_enqueue_scripts', function () {
                 }
 
                 // enqueue main JS file
-                $js_file = @$manifest[$manifest_key[0]]['file'];
+                $js_file = $manifest[$manifest_key[1]]['file'];
                 if (!empty($js_file)) {
-                    // wp_enqueue_script('main', DIST_URI . '/' . $js_file, JS_DEPENDENCY, '', JS_LOAD_IN_FOOTER);
+                    wp_enqueue_script('main', DIST_URI . '/' . $js_file, JS_DEPENDENCY, '', JS_LOAD_IN_FOOTER);
                 }
             }
         }
