@@ -1,4 +1,4 @@
-window.sectionbio = sectionbio
+window.sectionbio = sectionbio;
 function sectionbio() {
   return {
     posts: [],
