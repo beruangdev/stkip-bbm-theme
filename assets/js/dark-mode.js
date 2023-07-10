@@ -11,8 +11,6 @@ if (
   document.body.classList.add("dark");
 }
 
-// var themeToggleBtn = document.getElementById("theme-toggle");
-
 themeToggleBtn.addEventListener("click", function () {
   if (localStorage.getItem("color-theme")) {
     if (localStorage.getItem("color-theme") === "light") {

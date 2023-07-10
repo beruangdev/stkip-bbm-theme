@@ -24,7 +24,7 @@ if (!getLocalStorageWithExpiry("userLocation")) {
 import "./slide/slide-welcome.js";
 import "./slide/slide-freemode.js";
 
-import "./alpine/section-bio.js";
+// import "./alpine/section-bio.js";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
