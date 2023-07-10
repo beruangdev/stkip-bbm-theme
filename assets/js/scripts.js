@@ -1,11 +1,21 @@
 import "./dark-mode.js";
 import "./on-scroll.js";
+import "./helper.js";
 
-fetch("https://ipapi.co/json")
-  .then((resp) => resp.json())
-  .then((res) => {
-    localStorage.setItem("userLocation", JSON.stringify(res));
-  });
+import {
+  setLocalStorageWithExpiry,
+  getLocalStorageWithExpiry,
+} from "./local-storage.js";
+
+if (!getLocalStorageWithExpiry("userLocation")) {
+  // fetch("https://ipapi.co/json")
+  fetch("https://ipinfo.io/json?token=575b3e988f8efc")
+    .then((resp) => resp.json())
+    .then((res) => {
+      setLocalStorageWithExpiry("userLocation", res, 60 * 24 * 7 * 2);
+    });
+}
+
 import "./slide/slide-welcome.js";
 import "./slide/slide-freemode.js";
 

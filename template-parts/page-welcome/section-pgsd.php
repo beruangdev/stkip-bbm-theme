@@ -12,30 +12,7 @@
 
   <div class="gap-2 flex flex-col">
     <template x-for="post in posts" :key="post.id">
-      <div class="relative flex md:flex-row space-x-2 hover:scale-[1.02] hover:translate-y-[-0.5rem] duration-300">
-        <a :href="post.link" class="w-1/4 grid place-items-center">
-          <img :src="post.thumbnail" alt="Post Thumbnail" class="rounded-md w-full h-full object-cover object-center aspect-[16/12]" />
-        </a>
-        <div class="w-3/4 flex flex-col justify-between">
-          <a :href="post.link" class="no-underline">
-            <h6 x-text="post.title"></h6>
-          </a>
-          <div class="flex gap-2 items-center">
-            <span class="flex items-center gap-0.5 text-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span x-text="humanReadableTime(post.date)"></span>
-            </span>
-            <template x-if="post.categories.length > 0">
-              <p class="text-xs"> - </p>
-              <template x-for="category in post.categories">
-                <a :href="category.link" class="text-sm" x-text="category.name"></a>
-              </template>
-            </template>
-          </div>
-        </div>
-      </div>
+      <?= get_template_part("template-parts/component/card/card-child-horizontal") ?>
     </template>
     <template x-if="posts.length === 0">
       <h3>No posts found.</h3>
@@ -57,7 +34,6 @@
           fetch(url)
             .then(response => response.json())
             .then(data => {
-
               this.posts = data.map(item => {
                 let thumbnail = "https://via.placeholder.com/150"
                 try {
@@ -82,7 +58,6 @@
                   thumbnail
                 }
               });
-              console.log("🚀 this.posts:", JSON.parse(JSON.stringify(this.posts)))
             });
         })
       },
@@ -108,64 +83,4 @@
       }
     }
   }
-
-  function humanReadableTime(dateString) {
-    const formatter = new Intl.RelativeTimeFormat(getPreferredLanguage(), {
-      numeric: 'auto',
-      style: 'long',
-      localeMatcher: 'best fit'
-    });
-
-    const olderDate = new Date(dateString);
-    const currentDate = new Date();
-    const diff = olderDate - currentDate;
-
-    let timeUnit = "second";
-    let time = 0
-    const minutes = Math.floor(diff / 1000 / 60);
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
-    const weeks = Math.floor(days / 7);
-    const months = Math.floor(days / 30);
-    const years = Math.floor(days / 365);
-
-    if (years < 1) {
-      timeUnit = "year";
-      time = years;
-    } else if (months < 1) {
-      timeUnit = "month";
-      time = months;
-    } else if (weeks < 1) {
-      timeUnit = "week";
-      time = weeks;
-    } else if (days < 1) {
-      timeUnit = "day";
-      time = days;
-    } else if (hours < 1) {
-      timeUnit = "hour";
-      time = hours;
-    } else if (minutes < 1) {
-      timeUnit = "minute";
-      time = minutes;
-    } else {
-      timeUnit = "second";
-      time = diff;
-    }
-    time++
-    if (typeof time === "number" && !isNaN(time)) {
-      return formatter.format(time, timeUnit)
-    }
-    return "0000"
-  }
-
-  async function getPreferredLanguage() {
-    let userLanguage = localStorage.getItem("userLocation")
-    if (userLanguage) {
-      userLanguage = JSON.parse(userLanguage)
-      userLanguage = userLanguage.country_code
-    } else {
-      userLanguage = navigator.language || navigator.userLanguage;
-    }
-    return userLanguage;
-  }
-</script>
+</script> 
