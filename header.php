@@ -8,7 +8,7 @@
     <?php wp_head() ?>
 
     <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script> -->
-    <script defer src="https://unpkg.com/alpinejs"></script>
+    <!-- <script defer src="https://unpkg.com/alpinejs"></script> -->
 </head>
 
 <body <?php body_class('flex flex-col') ?>>
