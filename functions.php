@@ -16,11 +16,4 @@ function custom_post_type_archive_route($wp_rewrite) {
 
 add_action('generate_rewrite_rules', 'custom_post_type_archive_route');
 
-if (IS_VITE_DEVELOPMENT) {
-    add_action('after_setup_theme', function () {
-        show_admin_bar(false);
-    });
-}
-
-
 include "inc/inc.vite.php";

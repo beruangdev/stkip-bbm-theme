@@ -6,8 +6,8 @@ $args = array(
 $announcements_query = new WP_Query($args);
 ?>
 
-<div class="bg-primary-600 dark:bg-primary-950 w-full rounded-md shadow-lg flex flex-col gap-4 px-4 pt-3 pb-4">
-  <div class="flex justify-between items-center mb-1">
+<div class="bg-primary-600 dark:bg-primary-950 w-full rounded-md shadow-lg flex flex-col gap-1 px-2 pt-3 pb-4">
+  <div class="flex justify-between items-center mb-1 px-2">
     <h4 class="flex items-center gap-2 text-white">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
@@ -25,7 +25,7 @@ $announcements_query = new WP_Query($args);
 
   <?php if ($announcements_query->have_posts()) : ?>
     <?php while ($announcements_query->have_posts()) : $announcements_query->the_post(); ?>
-      <div class="relative flex md:flex-row space-x-2">
+      <div class="relative flex md:flex-row space-x-2 p-2 rounded-md hover:bg-primary-700 hover:dark:bg-primary-900">
         <a href="<?= esc_url(get_permalink()); ?>" class="w-1/4 grid place-items-center">
           <?php if (has_post_thumbnail()) : ?>
             <?php the_post_thumbnail('medium', ['class' => 'rounded-md']); ?>
@@ -57,7 +57,7 @@ $announcements_query = new WP_Query($args);
       </div>
     <?php endwhile; ?>
   <?php else : ?>
-    <h3>No announcements found.</h3>
+    <h3 class="text-white">No announcements found.</h3>
   <?php endif; ?>
 
 

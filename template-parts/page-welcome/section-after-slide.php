@@ -14,7 +14,7 @@ $contents = [
   ],
 ];
 ?>
-<div class="relative grid grid-cols-1 md:grid-cols-3  gap-1 container -mt-20 z-10 mb-8">
+<div class="relative grid grid-cols-1 md:grid-cols-3  gap-1 container -mt-[17rem] z-10 mb-8">
   <?php foreach ($contents as $key => $content) : ?>
     <div class="flex flex-col w-full bg-blue-700 shadow-lg rounded-md">
       <div class="py-6 pb-2 text-center">

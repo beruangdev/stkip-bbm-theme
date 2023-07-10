@@ -6,7 +6,7 @@ $args = array(
 $events_query = new WP_Query($args);
 ?>
 
-<div class="container">
+<div class="container relative z-10">
   <div class="flex justify-between items-center mb-1">
     <h3>Event Kampus</h3>
 

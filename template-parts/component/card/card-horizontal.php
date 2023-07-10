@@ -1,4 +1,4 @@
-<div class="flex gap-3 relative">
+<div class="flex gap-3 relative hover:scale-[1.02] hover:translate-y-[-0.5rem] duration-300">
   <?php if (is_user_logged_in() && current_user_can('edit_post', get_the_ID())) : ?>
     <div class="p-2 bg-primary-600 border-2 border-white rounded-full absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2">
       <a href="<?= esc_url(get_edit_post_link(get_the_ID())) ?>">

@@ -12,7 +12,7 @@
 
   <div class="gap-2 flex flex-col">
     <template x-for="post in posts" :key="post.id">
-      <div class="relative flex md:flex-row space-x-2">
+      <div class="relative flex md:flex-row space-x-2 hover:scale-[1.02] hover:translate-y-[-0.5rem] duration-300">
         <a :href="post.link" class="w-1/4 grid place-items-center">
           <img :src="post.thumbnail" alt="Post Thumbnail" class="rounded-md w-full h-full object-cover object-center aspect-[16/12]" />
         </a>
