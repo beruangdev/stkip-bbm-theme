@@ -6,7 +6,7 @@ function edit_custom_post_type()
   $obj->has_archive = true;
   register_post_type('post', $obj);
 }
-add_action('init', 'edit_custom_post_type');
+add_action('init', 'edit_custom_post_type', 0);
 
 // function flush_rewrite_rules_on_post_type_registration()
 // {
