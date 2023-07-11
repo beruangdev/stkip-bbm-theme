@@ -25,7 +25,7 @@
         <?php get_template_part('template-parts/component/card/card-horizontal'); ?>
       <?php endwhile ?>
     <?php else : ?>
-      <p><?php _e('No ' . post_type_archive_title() . " found.", 'textdomain'); ?></p>
+      <p><?= post_type_archive_title() ?> is empty</p>
     <?php endif ?>
   </div>
 
