@@ -1,68 +1,45 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 
-<div id="primary" class="content-area">
-  <main id="main" class="site-main">
+<div class="container mt-20 flex flex-col gap-3">
+  <?php if (have_posts()) : the_post(); ?>
+    <h1><?php the_title(); ?></h1>
+    <div class="mb-4 flex flex-col">
+      <div>
+        <span class="date">
+          <?php esc_html_e('Published on', 'your-theme'); ?> <?php the_date(); ?>
+        </span>
 
-    <?php
-    while (have_posts()) :
-      the_post();
-    ?>
+        <span class="author">
+          <?php esc_html_e('By', 'your-theme'); ?> <?php the_author(); ?>
+        </span>
+      </div>
+      <?php if (has_category()) : ?>
+        <span class="category">
+          <?php esc_html_e('Category:', 'your-theme'); ?> <?php the_category(', '); ?>
+        </span>
+      <?php endif; ?>
+    </div>
 
-      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <header class="entry-header">
-          <h1 class="entry-title"><?php the_title(); ?></h1>
-          <div class="entry-meta">
-            <span class="posted-on">
-              <time class="entry-date published" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time(get_option('date_format')); ?></time>
-            </span>
-            <span class="byline">
-              <?php
-              printf(
-                esc_html__('By %s', 'text-domain'),
-                '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
-              );
-              ?>
-            </span>
-          </div><!-- .entry-meta -->
-        </header><!-- .entry-header -->
+    <div>
+      <?php if (has_post_thumbnail()) : ?>
+        <div class="post-thumbnail mb-8">
+          <?php the_post_thumbnail('large', ['class' => 'w-full']); ?>
+        </div>
+      <?php endif; ?>
 
-        <div class="entry-content">
-          <?php
-          the_content();
+      <div class="content mb-4">
+        <?php the_content(); ?>
+      </div>
 
-          wp_link_pages(
-            array(
-              'before' => '<div class="page-links">' . esc_html__('Pages:', 'text-domain'),
-              'after'  => '</div>',
-            )
-          );
-          ?>
-        </div><!-- .entry-content -->
+      <?php if (has_tag()) : ?>
+        <span class="tags">
+          <?php esc_html_e('Tags:', 'your-theme'); ?> <?php the_tags('', ', '); ?>
+        </span>
+      <?php endif; ?>
+    </div>
+  <?php else : ?>
+    <p><?php esc_html_e('No content found.', 'your-theme'); ?></p>
+  <?php endif; ?>
+</div>
 
-        <footer class="entry-footer">
-          <?php
-          if (has_category()) {
-            echo '<div class="cat-links">' . esc_html__('Categories: ', 'text-domain');
-            the_category(', ');
-            echo '</div>';
-          }
-
-          if (has_tag()) {
-            echo '<div class="tag-links">' . esc_html__('Tags: ', 'text-domain');
-            the_tags('', ', ');
-            echo '</div>';
-          }
-          ?>
-        </footer><!-- .entry-footer -->
-      </article><!-- #post-<?php the_ID(); ?> -->
-
-      <side>
-        <? get_sidebar() ?>
-      </side>
-
-    <?php endwhile; ?>
-
-  </main><!-- #main -->
-</div><!-- #primary -->
-
-<?php get_footer() ?>
+<?php get_footer(); ?>

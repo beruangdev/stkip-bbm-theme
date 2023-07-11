@@ -1,6 +1,9 @@
 body {
-  @apply bg-background-50 dark:bg-background-900;
+  @apply bg-background-75 dark:bg-background-900;
   font-family: "Poppins", sans-serif;
+}
+.footer {
+  @apply bg-background-100 dark:bg-background-950;
 }
 
 h1,
@@ -51,4 +54,8 @@ h6 {
 
 a {
   @apply font-medium text-primary-600 underline dark:text-white hover:no-underline;
+}
+
+hr {
+  @apply bg-background-300 dark:bg-background-700;
 }

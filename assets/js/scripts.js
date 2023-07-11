@@ -3,21 +3,24 @@ import "./on-scroll.js";
 import "./helper.js";
 
 import {
-  setLocalStorageWithExpiry,
-  getLocalStorageWithExpiry,
+  setLS,
+  getLS,
 } from "./local-storage.js";
 
-if (!getLocalStorageWithExpiry("userLocation")) {
+if (!getLS("userLocation")) {
   console.log('GET USER LOCATION FROM API')
   // fetch("https://ipapi.co/json")
   fetch("https://ipinfo.io/json?token=575b3e988f8efc")
     .then((resp) => resp.json())
     .then((res) => {
-      setLocalStorageWithExpiry("userLocation", res, 60 * 24 * 7 * 2);
+      setLS("userLocation", res, 60 * 24 * 7 * 2);
     });
 }
 
 import "./slide/slide-welcome.js";
+
+import "./alpine/fetch-child.js";
+
 import "./slide/slide-freemode.js";
 
 // import "./alpine/section-bio.js";

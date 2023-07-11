@@ -14,7 +14,7 @@
 <body <?php body_class('flex flex-col') ?>>
     <?php wp_body_open(); ?>
 
-    <nav class="top-navbar fixed w-full z-20 top-0 left-0" style="background: linear-gradient(0deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 6%) 14%, rgb(0 0 0 / 30%) 100%);">
+    <nav class="top-navbar fixed w-full z-20 top-0 left-0" style="background: linear-gradient(0deg, rgb(15 20 31 / 0%) 0%, rgb(15 20 31 / 6%) 14%, rgb(15 20 31 / 30%) 100%);">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center logo">
                 <?php

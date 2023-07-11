@@ -1,8 +1,8 @@
 import Swiper from "swiper";
-import { EffectFade } from "swiper/modules";
+import { EffectFade, Autoplay } from "swiper/modules";
 
 new Swiper(".slide-welcome", {
-  modules: [EffectFade],
+  modules: [EffectFade, Autoplay],
   spaceBetween: 0,
   centeredSlides: false,
   effect: "fade",
@@ -11,7 +11,7 @@ new Swiper(".slide-welcome", {
     crossFade: true,
   },
   autoplay: {
-    delay: 2500,
+    delay: 2000,
     disableOnInteraction: false,
   },
 });

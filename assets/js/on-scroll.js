@@ -32,11 +32,12 @@ window.addEventListener(
 );
 
 function changeNavbarBG(scrollY) {
-  const maxScroll = 300;
+  const maxScroll = location.pathname === "/" ? 300 : 200;
   const color1 = Math.max((scrollY / maxScroll) * 100, 0);
   const color2 = Math.max((scrollY / maxScroll) * 94 + 6, 6);
   const color3 = Math.max((scrollY / maxScroll) * 70 + 30, 30);
   const nav = document.querySelector("nav.top-navbar");
   if (!nav) return;
-  nav.style.background = `linear-gradient(0deg, rgb(14 14 14 / ${color1}%) 0%, rgb(14 14 14 / ${color2}%) 14%, rgb(14 14 14 / ${color3}%) 100%)`;
+  const rgb = "15 20 31"
+  nav.style.background = `linear-gradient(0deg, rgb(${rgb} / ${color1}%) 0%, rgb(${rgb} / ${color2}%) 14%, rgb(${rgb} / ${color3}%) 100%)`;
 }

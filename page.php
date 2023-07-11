@@ -1,12 +1,22 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 
-    <article class="max-w-screen-lg mx-auto ">
-
-        <h1 class="text-3xl font-semibold"><?php the_title() ?></h1>
+<div class="container mt-20">
+    <?php if (have_posts()) : the_post(); ?>
+        <h1><?php the_title(); ?></h1>
         <div class="mt-4">
-            <?php the_content() ?>
+            <?php if (has_post_thumbnail()) : ?>
+                <div class="post-thumbnail mb-8">
+                    <?php the_post_thumbnail('large', ["class" => "w-full"]); ?>
+                </div>
+            <?php endif; ?>
+
+            <div class="content">
+                <?php the_content(); ?>
+            </div>
         </div>
+    <?php else : ?>
+        <p><?php esc_html_e('No content found.', 'your-theme'); ?></p>
+    <?php endif; ?>
+</div>
 
-    </article>
-
-<?php get_footer() ?>
+<?php get_footer(); ?>

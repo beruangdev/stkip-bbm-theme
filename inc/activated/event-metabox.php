@@ -21,7 +21,12 @@ function event_details_callback($post)
   $event_location = get_post_meta($post->ID, 'event_location', true);
   $event_start_datetime = get_post_meta($post->ID, 'event_start_datetime', true);
   $event_end_datetime = get_post_meta($post->ID, 'event_end_datetime', true);
-
+  if (empty($event_start_datetime)) {
+    $event_start_datetime = current_time('Y-m-d\TH:i');
+  }
+  if (empty($event_end_datetime)) {
+    $event_end_datetime = current_time('Y-m-d\TH:i');
+  }
   // Output fields for location, start datetime, and end datetime
 ?>
   <div class="mb-4">

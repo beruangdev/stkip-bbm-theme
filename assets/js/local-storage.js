@@ -1,4 +1,5 @@
-function setLocalStorageWithExpiry(key, value, expiryInMinutes = 999999999) {
+window.setLS = setLS
+function setLS(key, value, expiryInMinutes = 60 * 24 * 7) {
   const now = new Date();
   const item = {
     value: value,
@@ -6,8 +7,8 @@ function setLocalStorageWithExpiry(key, value, expiryInMinutes = 999999999) {
   };
   localStorage.setItem(key, JSON.stringify(item));
 }
-
-function getLocalStorageWithExpiry(key) {
+window.getLS = getLS
+function getLS(key) {
   const itemStr = localStorage.getItem(key);
   if (!itemStr) {
     return null;
@@ -21,4 +22,4 @@ function getLocalStorageWithExpiry(key) {
   return item.value;
 }
 
-export { setLocalStorageWithExpiry, getLocalStorageWithExpiry };
+export { setLS, getLS };

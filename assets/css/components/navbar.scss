@@ -2,9 +2,9 @@
 .navbar {
   @apply py-4;
 
-  &.dark {
-    @apply bg-gray-900;
-  }
+  // &.dark {
+  //   @apply bg-gray-900;
+  // }
 
   &.light {
     @apply bg-gray-100;
@@ -101,7 +101,7 @@ ul.menu > .menu-item > a, ul.menu > .menu-item > svg {
 
 /* Dark mode styles */
 .dark {
-  @apply bg-gray-900;
+  // @apply bg-gray-900;
 
   .top-navbar {
     ul.menu {

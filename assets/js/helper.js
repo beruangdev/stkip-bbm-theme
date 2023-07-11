@@ -1,4 +1,4 @@
-import { getLocalStorageWithExpiry } from "./local-storage";
+import { getLS } from "./local-storage";
 
 window.humanReadableTime = humanReadableTime
 function humanReadableTime(dateString) {
@@ -52,7 +52,7 @@ function humanReadableTime(dateString) {
 
 
 async function getPreferredLanguage() {
-  let userLanguage = getLocalStorageWithExpiry("userLocation");
+  let userLanguage = getLS("userLocation");
   if (userLanguage) {
     userLanguage = userLanguage?.country || userLanguage?.country_code;
   } else {
