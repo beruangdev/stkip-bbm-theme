@@ -5,18 +5,18 @@
     <h1><?php the_title(); ?></h1>
     <div class="mb-4 flex flex-col">
       <div>
-        <span class="date">
+        <p class="date">
           <?php esc_html_e('Published on', 'your-theme'); ?> <?php the_date(); ?>
-        </span>
+        </p>
 
-        <span class="author">
+        <p class="author">
           <?php esc_html_e('By', 'your-theme'); ?> <?php the_author(); ?>
-        </span>
+        </p>
       </div>
       <?php if (has_category()) : ?>
-        <span class="category">
+        <p class="category">
           <?php esc_html_e('Category:', 'your-theme'); ?> <?php the_category(', '); ?>
-        </span>
+        </p>
       <?php endif; ?>
     </div>
 
@@ -32,9 +32,9 @@
       </div>
 
       <?php if (has_tag()) : ?>
-        <span class="tags">
+        <p class="tags">
           <?php esc_html_e('Tags:', 'your-theme'); ?> <?php the_tags('', ', '); ?>
-        </span>
+        </p>
       <?php endif; ?>
     </div>
   <?php else : ?>
