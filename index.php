@@ -8,6 +8,7 @@
 
   <?php get_template_part('template-parts/component/slide/slide-welcome'); ?>
   <?php get_template_part('template-parts/page-welcome/section-after-slide'); ?>
+  <?php get_template_part('template-parts/page-welcome/section-fitur-campus'); ?>
   <?php get_template_part('template-parts/page-welcome/section-event'); ?>
   <div class="container">
     <hr class="h-px my-4 md:my-8 bg-gray-200 border-0 dark:bg-gray-700">

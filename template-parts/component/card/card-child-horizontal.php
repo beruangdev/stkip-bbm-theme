@@ -13,7 +13,9 @@
         </svg>
         <span x-text="humanReadableTime(post.date)"></span>
       </span>
-      <p class="text-xs"> - </p>
+      <template x-if="post?.categories && post.categories.length > 0">
+        <p class="text-xs"> - </p>
+      </template>
       <template x-for="category in post.categories">
         <a :href="category.link" class="text-sm" x-text="category.name"></a>
       </template>
