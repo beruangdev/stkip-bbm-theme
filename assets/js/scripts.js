@@ -1,10 +1,5 @@
 import "./dark-mode.js";
 import "./on-scroll.js";
-
-// import Alpine from "alpinejs";
-// window.Alpine = Alpine;
-// Alpine.start();
-
 import "./helper.js";
 
 import {
@@ -13,6 +8,7 @@ import {
 } from "./local-storage.js";
 
 if (!getLocalStorageWithExpiry("userLocation")) {
+  console.log('GET USER LOCATION FROM API')
   // fetch("https://ipapi.co/json")
   fetch("https://ipinfo.io/json?token=575b3e988f8efc")
     .then((resp) => resp.json())

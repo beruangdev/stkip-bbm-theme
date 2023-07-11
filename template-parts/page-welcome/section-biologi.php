@@ -1,21 +1,14 @@
 <div class="" x-data="sectionbio" x-init="initSectionbio">
   <div class="flex justify-between items-center mb-3">
-    <h3>Berita Prodi Biologi</h3>
-
-    <a :href="baseUrl" class="group flex items-center gap-2 duration-200  hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-5 py-2 dark:hover:bg-background-950/30 focus:outline-none dark:focus:ring-background-800 no-underline">
-      <h5 class="group-hover:text-white text-primary-950">Lainnya</h5>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 group-hover:text-white text-primary-950 dark:text-white">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-      </svg>
-    </a>
+    <h4>Berita Prodi Biologi</h4>
+    <?php get_template_part('template-parts/component/button/button-lainnya'); ?>
   </div>
-
   <div class="gap-2 flex flex-col">
     <template x-for="post in posts" :key="post.id">
       <?= get_template_part("template-parts/component/card/card-child-horizontal") ?>
     </template>
     <template x-if="posts.length === 0">
-      <h3>No posts found.</h3>
+      <h5>Belum ada berita</h5>
     </template>
   </div>
 </div>

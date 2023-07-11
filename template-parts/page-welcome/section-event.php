@@ -8,9 +8,9 @@ $events_query = new WP_Query($args);
 
 <div class="container relative z-10">
   <div class="flex justify-between items-center mb-1">
-    <h3>Event Kampus</h3>
+    <h5>Event Kampus</h5>
 
-    <a href="<?php echo esc_url(get_post_type_archive_link('event')); ?>" class="group flex items-center gap-2 duration-200  hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-5 py-2 dark:hover:bg-background-950/30 focus:outline-none dark:focus:ring-background-800 no-underline">
+    <a href="<?php echo esc_url(get_post_type_archive_link('event')); ?>" class="group flex items-center gap-2 duration-200  hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-3 py-1 dark:hover:bg-background-950/30 focus:outline-none dark:focus:ring-background-800 no-underline">
       <h5 class="group-hover:text-white text-primary-950">Lainnya</h5>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 group-hover:text-white text-primary-950 dark:text-white">
         <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
@@ -60,7 +60,7 @@ $events_query = new WP_Query($args);
       </div>
     </div>
   <?php else : ?>
-    <h3>No events found.</h3>
+    <h5>Belum ada event</h5>
   <?php endif; ?>
 
 </div>
