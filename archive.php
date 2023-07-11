@@ -25,14 +25,14 @@
         <?php get_template_part('template-parts/component/card/card-horizontal'); ?>
       <?php endwhile ?>
     <?php else : ?>
-      <p><?php _e('No announcements found.', 'textdomain'); ?></p>
+      <p><?php _e('No ' . post_type_archive_title() . " found.", 'textdomain'); ?></p>
     <?php endif ?>
   </div>
 
   <div class="mx-auto w-fit">
     <?php get_template_part('template-parts/component/pagination'); ?>
   </div>
- 
+
 </div>
 
 <?php get_footer(); ?>
