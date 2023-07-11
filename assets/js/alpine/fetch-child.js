@@ -1,4 +1,4 @@
-import { getLS, setLS } from "../local-storage";
+import { getLS, setLS } from "../local-storage.js";
 
 window.fetchChild = fetchChild;
 function fetchChild({ slug }) {
@@ -7,10 +7,11 @@ function fetchChild({ slug }) {
     baseUrl: `https://stkipbbm.ac.id/${slug}`,
     async init() {
       let posts = getLS(`posts:news:${slug}`);
-      if (!posts) {
+      if (!posts || posts.length === 0) {
         posts = await this.fetchPost();
         setLS(`posts:news:${slug}`, posts, 60 * 3);
       }
+      this.posts = posts;
     },
     async fetchPost() {
       return await new Promise((resolve, reject) => {

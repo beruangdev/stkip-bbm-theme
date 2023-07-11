@@ -13,7 +13,8 @@
         </svg>
         <p x-text="humanReadableTime(post.date)"></span>
       </span>
-      <template x-if="post?.categories && post.categories.length > 0">
+      <div x-effect="post"></div>
+      <template x-if="post.categories.length > 0">
         <p class="text-xs"> - </p>
       </template>
       <template x-for="category in post.categories">
