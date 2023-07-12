@@ -13,7 +13,6 @@
 
 <body <?php body_class('flex flex-col') ?>>
     <?php wp_body_open(); ?>
-
     <nav class="top-navbar fixed w-full z-20 top-0 left-0" style="background: linear-gradient(0deg, rgb(15 20 31 / 0%) 0%, rgb(15 20 31 / 6%) 14%, rgb(15 20 31 / 30%) 100%);">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center logo">
@@ -33,6 +32,20 @@
                         'menu' => 'Primary Menu',
                     ]) ?>
                 </div>
+
+
+
+
+                <select id="language" class="skiptranslate bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 max-w-[5.5rem]">
+                    <option value="id" selected>IDN</option>
+                    <option value="en">ENG</option>
+                    <option value="ar">ARB</option>
+                    <option value="fr">FRA</option>
+                    <option value="de">GER</option>
+                </select>
+
+
+
 
                 <button type="button" class="theme-toggle hover:bg-gray-800 p-2 rounded-md">
                     <span class="dark:hidden">

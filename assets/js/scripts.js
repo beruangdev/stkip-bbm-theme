@@ -1,14 +1,23 @@
 import "./dark-mode.js";
+let selectEl = document.querySelector(`select[id="language"]`);
+let datals = localStorage.getItem("fat:language");
+if (datals) {
+  selectEl.querySelectorAll("option").forEach((op) => {
+    if (datals == op.value) {
+      op.selected = true;
+    }
+  });
+}else {
+  localStorage.setItem("fat:language", "id")
+}
+
 import "./on-scroll.js";
 import "./helper.js";
 
-import {
-  setLS,
-  getLS,
-} from "./local-storage.js";
+import { setLS, getLS } from "./local-storage.js";
 
 if (!getLS("userLocation")) {
-  console.log('GET USER LOCATION FROM API')
+  console.log("GET USER LOCATION FROM API");
   // fetch("https://ipapi.co/json")
   fetch("https://ipinfo.io/json?token=575b3e988f8efc")
     .then((resp) => resp.json())
@@ -27,9 +36,11 @@ import "./slide/slide-freemode.js";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
+
 // import 'swiper/css/navigation';
 // import 'swiper/css/pagination';
 
+import "./translate.js";
 document.addEventListener("DOMContentLoaded", function () {
   // Handler when the DOM is fully loaded
   console.log("js executed...");

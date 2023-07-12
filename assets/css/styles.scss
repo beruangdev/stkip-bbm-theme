@@ -17,9 +17,20 @@
 @import "./custom-utilities";
 
 @import "./components/navbar.scss";
+body {
+  top: 0px !important;
+}
 
 body.admin-bar {
   max-height: calc(100vh - 32px);
+}
+
+[id="google_translate_element2"],
+[id=":1.container"] {
+  display: none !important;
+}
+[id="goog-gt-tt"] {
+  display: none !important;
 }
 
 // #wpadminbar {
