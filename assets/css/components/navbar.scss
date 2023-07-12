@@ -42,7 +42,7 @@ ul.menu > .menu-item > a, ul.menu > .menu-item > svg {
   }
 
   .menu-item {
-    @apply relative mr-4 text-sm font-medium;
+    @apply relative mr-4 text-sm font-medium w-max;
 
     a {
       @apply no-underline;
