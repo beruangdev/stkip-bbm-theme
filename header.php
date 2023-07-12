@@ -26,7 +26,7 @@
                     <img src="<?= esc_url(get_template_directory_uri()) ?>/images/logo.svg" alt="<?= get_bloginfo('name') ?>" class="h-8 mr-3">
                 <?php endif; ?>
             </a>
-            <div class="items-center justify-between md:flex md:w-auto md:order-1">
+            <div class="items-center justify-between gap-2 flex md:w-auto md:order-1">
                 <div class="hidden md:flex">
                     <?php echo wp_nav_menu([
                         'menu' => 'Primary Menu',
@@ -36,7 +36,7 @@
 
 
 
-                <select id="language" class="skiptranslate bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 max-w-[5.5rem]">
+                <select id="language" class="skiptranslate bg-background-50 border border-background-300 text-background-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-background-900 dark:border-background-600 dark:placeholder-background-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 max-w-[5.5rem]">
                     <option value="id" selected>IDN</option>
                     <option value="en">ENG</option>
                     <option value="ar">ARB</option>
