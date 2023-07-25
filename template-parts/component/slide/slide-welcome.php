@@ -6,7 +6,7 @@ $slide_photos = array_filter(scandir($folder_path), function ($file) {
 
 $slide_urls = [];
 foreach ($slide_photos as $slide_photo) {
-  $slide_urls[] = get_template_directory_uri() . "/assets/img/slide-welcome-abb/$slide_photo";
+  $slide_urls[] = get_template_directory_uri() . "/assets/img/slide-welcome/$slide_photo";
 }
 ?>
 
