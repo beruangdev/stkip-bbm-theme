@@ -1,5 +1,5 @@
 <?php
-$slide_photo = [
+$slide_photos = [
   'foto-1.jpg',
   'foto-2.jpg',
   'foto-3.jpg',
@@ -8,8 +8,8 @@ $slide_photo = [
   'foto-6.jpg',
 ];
 $slide_urls = [];
-for ($index = 1; $index <= 7; $index++) {
-  $slide_urls[] =  get_template_directory_uri() . "/assets/img/slide-welcome/foto-$index.jpg";
+foreach ($slide_photos as $key => $slide_photo) {
+  $slide_urls[] =  get_template_directory_uri() . "/assets/img/slide-welcome-abb/foto-$index.jpg";
 }
 ?>
 
