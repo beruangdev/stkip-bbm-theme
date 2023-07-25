@@ -9,7 +9,7 @@ $slide_photos = [
 ];
 $slide_urls = [];
 foreach ($slide_photos as $key => $slide_photo) {
-  $slide_urls[] =  get_template_directory_uri() . "/assets/img/slide-welcome-abb/foto-$index.jpg";
+  $slide_urls[] =  get_template_directory_uri() . "/assets/img/slide-welcome-abb/$slide_photo";
 }
 ?>
 
