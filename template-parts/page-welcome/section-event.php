@@ -6,6 +6,7 @@ $args = array(
 $events_query = new WP_Query($args);
 ?>
 
+<?php if ($events_query->have_posts()) : ?>
 <div class="container relative z-10 mb-6">
   <div class="flex justify-between items-center mb-1">
     <h5>Event Kampus</h5>
@@ -18,7 +19,6 @@ $events_query = new WP_Query($args);
     </a>
   </div>
 
-  <?php if ($events_query->have_posts()) : ?>
     <div class="swiper freemode" data-slides-per-view="1.15" data-breakpoints='{"640": {"slidesPerView": 2.2}}'>
       <div class="swiper-wrapper">
         <?php while ($events_query->have_posts()) :
@@ -59,10 +59,7 @@ $events_query = new WP_Query($args);
         <?php endwhile; ?>
       </div>
     </div>
-  <?php else : ?>
-    <h5>Belum ada event</h5>
-  <?php endif; ?>
-
 </div>
+<?php endif; ?>
 
 <?php wp_reset_postdata(); ?>
