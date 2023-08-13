@@ -51,6 +51,7 @@ body.admin-bar {
 }
 
 article {
+  @apply text-[14px] md:text-[16px];
   * {
     @apply mb-4 text-justify;
   }
