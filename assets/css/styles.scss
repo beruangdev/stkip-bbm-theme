@@ -61,6 +61,10 @@ article {
   }
 }
 
+a[href="https://optimole.com/wordpress/?from=badgeOn"]{
+  display: none !important;
+}
+
 // #wpadminbar {
 //   @apply hidden;
 // }
