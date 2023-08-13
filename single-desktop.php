@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="grid grid-cols-12 container mt-20">
+<div class="grid grid-cols-12 container mt-20 gap-x-8">
   <div class="col-span-12 md:col-span-8">
     <?php if (have_posts()) : the_post(); ?>
 
@@ -71,6 +71,13 @@
     <?php else : ?>
       <p><?php esc_html_e('No content found.', 'your-theme'); ?></p>
     <?php endif; ?>
+  </div>
+
+  <div class="hidden md:block md:col-span-4">
+    <div class="flex flex-col">
+      <div class="h-56 w-full"></div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.5358632840225!2d96.18828927462576!3d4.1143651958594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303ec3c16fe3fbb5%3A0x6b3af3b761e996e!2sSTKIP%20Bina%20Bangsa%20Meulaboh!5e0!3m2!1sid!2sid!4v1688943402086!5m2!1sid!2sid" class="aspect-square w-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
   </div>
 </div>
 <?php get_footer(); ?>
