@@ -25,7 +25,7 @@ $menus = get_menu_items_recursive($menu_items);
 ?>
 
 
-<nav class="top-navbar fixed w-full z-20 top-0 left-0" x-data="{ show :  false }">
+<nav class="top-navbar fixed w-full z-20 top-0 left-0" x-data="{ show :  false }" x-cloak>
   <div class="max-w-screen-xl flex flex-wrap items-center mx-auto px-2">
     <button data-collapse-toggle="navbar-default" type="button" class="mr-1 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false" x-data @click="show = !show">
       <span class="sr-only">Open main menu</span>
