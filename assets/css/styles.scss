@@ -55,6 +55,10 @@ article {
   * {
     @apply mb-4 text-justify;
   }
+
+  a {
+    @apply underline underline-offset-4;
+  }
 }
 
 // #wpadminbar {

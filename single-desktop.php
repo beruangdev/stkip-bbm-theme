@@ -31,7 +31,7 @@
       </div>
 
       <h1 class="text-2xl md:text-4xl w-full text-center mt-6 mb-4 md:mt-8 md:mb-6 font-bold"><?php the_title(); ?></h1>
-      <div class="flex justify-center gap-2 opacity-75 text-sm md:text-base">
+      <div class="flex justify-center gap-2 opacity-75 text-base">
         <p class="author">
           <?php esc_html_e('By', 'your-theme'); ?> <?php the_author(); ?>
         </p>
@@ -47,7 +47,7 @@
       </div>
 
 
-      <p class="date text-center opacity-70 mb-6 text-sm md:text-base">
+      <p class="date text-center opacity-70 mb-6 text-base">
         <?php esc_html_e('Published on', 'your-theme'); ?> <?php the_date(); ?>
       </p>
 
