@@ -21,10 +21,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php wp_head() ?>
+
+    <!-- Judul Halaman -->
+    <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+
+    <!-- Deskripsi Situs -->
+    <meta name="description" content="<?php bloginfo('description'); ?>">
+
+    <!-- Meta Tag untuk Penelusuran -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <?php if (is_singular()) : ?>
+        <link rel="canonical" href="<?php the_permalink(); ?>">
+    <?php endif; ?>
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
 </head>
