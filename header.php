@@ -30,7 +30,7 @@
 </head>
 
 
-<body <?php body_class('flex flex-col') ?>>
+<body <?php body_class('flex flex-col') ?> x-cloak>
     <?php wp_body_open(); ?>
 
     <?php if (wp_is_mobile()) : ?>
