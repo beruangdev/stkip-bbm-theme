@@ -69,9 +69,9 @@ $menus = get_menu_items_recursive($menu_items);
   </div>
 
 
-  <div x-data x-show="show" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click="show = false" class="bg-black/30 backdrop-blur-sm w-full h-full fixed inset-0 z-[-1]"></div>
+  <div x-data x-show="show" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click="show = false" class="bg-black/30 backdrop-blur-sm w-full h-full fixed inset-0 z-[-1]" x-cloak></div>
 
-  <aside class="fixed inset-0 z-[-1] w-80" x-show="show" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-x-full" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 -translate-x-full">
+  <aside class="fixed inset-0 z-[-1] w-80" x-show="show" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-x-full" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 -translate-x-full" x-cloak>
 
     <div class="mt-20 pl-6 pt-6 pr-4 rounded-tr-lg  h-full bg-background-100 dark:bg-background-925 overflow-y-auto">
       <div class="text-lg text-medium divide-y-[3px] divide-background-100 dark:divide-background-600 flex flex-col">
