@@ -25,7 +25,7 @@ $menus = get_menu_items_recursive($menu_items);
 ?>
 
 
-<nav class="top-navbar fixed w-full z-20 top-0 left-0" >
+<nav class="top-navbar fixed w-full z-20 top-0 left-0">
   <div class="max-w-screen-xl flex flex-wrap items-center mx-auto px-4">
     <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center logo">
       <?php
@@ -59,19 +59,17 @@ $menus = get_menu_items_recursive($menu_items);
                 </svg>
               </button>
               <!-- Dropdown menu -->
-              <div x-data x-cloak x-show="show" class="z-10 absolute font-normal bg-white dark:bg-background-900 divide-y divide-gray-100 rounded-lg shadow w-44  dark:divide-gray-600">
-                <?php foreach ($menu["children"] as $child) : ?>
-                  <?php if (count($child["children"]) === 0) : ?>
-                    <ul class="py-2">
+              <div x-data x-cloak x-show="show" class="z-10 absolute font-normal bg-white dark:bg-background-900 divide-y divide-gray-100 rounded-lg shadow w-44  dark:divide-gray-600 text-black dark:text-white">
+                <ul class="py-2">
+                  <?php foreach ($menu["children"] as $child) : ?>
+                    <?php if (count($child["children"]) === 0) : ?>
                       <li>
                         <a href="<?= $child['url'] ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-background-900"><?= $child['title'] ?></a>
                       </li>
-                    </ul>
-                  <?php else : ?>
-                    <ul class="py-2" x-data="{
+                    <?php else : ?>
+                      <li class="relative" x-data="{
               show: true
               }" @click=" show=true" @click.outside="show = false" @mouseenter="show=true" @mouseleave="show=false">
-                      <li class="relative">
                         <button type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-background-900">
                           <?= $child["title"] ?>
                           <svg class="w-2.5 h-2.5 ml-2.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -91,10 +89,10 @@ $menus = get_menu_items_recursive($menu_items);
                           </ul>
                         </div>
                       </li>
-                    </ul>
 
-                  <?php endif; ?>
-                <?php endforeach; ?>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
+                </ul>
 
               </div>
             </li>
