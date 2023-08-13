@@ -59,6 +59,9 @@ module.exports = {
       white: colors.white,
       gray: colors.gray,
       red: colors.red,
+      transparent: colors.transparent,
+      current: colors.current,
+      inherit: colors.inherit,
   
     },
   },
