@@ -55,7 +55,7 @@
       </p>
     </div>
 
-    <div>
+    <article>
       <?php if (has_post_thumbnail()) : ?>
         <div class="post-thumbnail mb-8">
           <?php the_post_thumbnail('large', ['class' => 'w-full']); ?>
@@ -73,7 +73,7 @@
           </p>
         <?php endif; ?>
       </div>
-    </div>
+    </article>
   <?php else : ?>
     <p><?php esc_html_e('No content found.', 'your-theme'); ?></p>
   <?php endif; ?>
