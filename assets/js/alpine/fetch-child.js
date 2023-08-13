@@ -16,19 +16,25 @@ function fetchChild({ slug }) {
     },
     async fetchPost() {
       return await new Promise((resolve, reject) => {
-        let url = `${this.baseUrl}/wp-json/wp/v2/posts?per_page=5&_embed&fields=id,title,link,date,categories,_embedded.wp:featuredmedia.source_url`;
+        let url = `${this.baseUrl}/wp-json/wp/v2/posts?per_page=5&_embed&fields=id,title,link,date,categories,_embedded.wp:featuredmedia.source_url,_embedded.wp:featuredmedia.media_details.sizes`;
         fetch(url)
           .then((response) => response.json())
           .then((data) => {
             let posts = data.map((item) => {
-             console.log("🚀 ~ file: fetch-child.js:24 ~ posts ~ item:", item)
-             
-              
-              let thumbnail = "https://via.placeholder.com/150";
+              // console.log("🚀 ~ file: fetch-child.js:24 ~ posts ~ item:", item);
+
+              let img = "https://via.placeholder.com/150";
+              let imgsrcset = "";
               try {
-                thumbnail = item._embedded["wp:featuredmedia"][0].source_url;
+                img = item._embedded["wp:featuredmedia"][0].source_url;
+                const sizes =
+                  item._embedded["wp:featuredmedia"][0].media_details.sizes;
+                const srcset = Object.values(sizes)
+                  .map((size) => `${size.source_url} ${size.width}w`)
+                  .join(", ");
+
+                imgsrcset = srcset;
               } catch (error) {}
-              if (!thumbnail) thumbnail = "https://via.placeholder.com/150";
 
               let post = {
                 id: item.id,
@@ -44,22 +50,23 @@ function fetchChild({ slug }) {
                   id: tagId,
                   ...this.getTag(tagId, item),
                 })),
-                thumbnail,
+                img,
+                imgsrcset,
               };
               return post;
             });
-            // console.log("🚀 ~ file: fetch-child.js:48 ~ .then ~ posts:", posts)
+            console.log("🚀 ~ file: fetch-child.js:48 ~ .then ~ posts:", posts);
             resolve(posts);
           });
       });
     },
     getCategory(categoryId, item) {
       const categoryIndex = item._links["wp:term"].findIndex(
-        (item) => item.taxonomy === "category"
+        (item) => item.taxonomy === "category",
       );
       if (categoryIndex !== -1) {
         const category = item._embedded["wp:term"][categoryIndex].find(
-          (item) => item.id === categoryId
+          (item) => item.id === categoryId,
         );
         if (category) {
           return category;
@@ -69,11 +76,11 @@ function fetchChild({ slug }) {
     },
     getTag(tagId, item) {
       const tagIndex = item._links["wp:term"].findIndex(
-        (item) => item.taxonomy === "post_tag"
+        (item) => item.taxonomy === "post_tag",
       );
       if (tagIndex !== -1) {
         const tag = item._embedded["wp:term"][tagIndex].find(
-          (item) => item.id === tagId
+          (item) => item.id === tagId,
         );
         if (tag) {
           return tag;
