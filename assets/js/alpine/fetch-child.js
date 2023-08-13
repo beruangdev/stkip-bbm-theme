@@ -6,6 +6,7 @@ function fetchChild({ slug }) {
     posts: [],
     baseUrl: `https://stkipbbm.ac.id/${slug}`,
     async init() {
+      setLS(`posts:news:${slug}`, [], 60 * 3);
       let posts = getLS(`posts:news:${slug}`);
       if (!posts || posts.length === 0) {
         posts = await this.fetchPost();
@@ -20,6 +21,9 @@ function fetchChild({ slug }) {
           .then((response) => response.json())
           .then((data) => {
             let posts = data.map((item) => {
+             console.log("🚀 ~ file: fetch-child.js:24 ~ posts ~ item:", item)
+             
+              
               let thumbnail = "https://via.placeholder.com/150";
               try {
                 thumbnail = item._embedded["wp:featuredmedia"][0].source_url;
@@ -44,6 +48,7 @@ function fetchChild({ slug }) {
               };
               return post;
             });
+            // console.log("🚀 ~ file: fetch-child.js:48 ~ .then ~ posts:", posts)
             resolve(posts);
           });
       });
