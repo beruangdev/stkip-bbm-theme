@@ -21,17 +21,18 @@ function fetchChild({ slug }) {
           .then((response) => response.json())
           .then((data) => {
             let posts = data.map((item) => {
-              // console.log("🚀 ~ file: fetch-child.js:24 ~ posts ~ item:", item);
-
               let img = "https://via.placeholder.com/150";
+              let imgs = [];
               let imgsrcset = "";
               try {
-                img = item._embedded["wp:featuredmedia"][0].source_url;
-                const sizes =
+                // img = item._embedded["wp:featuredmedia"][0].source_url;
+                imgs =
                   item._embedded["wp:featuredmedia"][0].media_details.sizes;
-                const srcset = Object.values(sizes)
+                const srcset = Object.values(imgs)
                   .map((size) => `${size.source_url} ${size.width}w`)
                   .join(", ");
+
+                img = imgs.thumbnail.source_url;
 
                 imgsrcset = srcset;
               } catch (error) {}
@@ -51,11 +52,11 @@ function fetchChild({ slug }) {
                   ...this.getTag(tagId, item),
                 })),
                 img,
+                imgs,
                 imgsrcset,
               };
               return post;
             });
-            console.log("🚀 ~ file: fetch-child.js:48 ~ .then ~ posts:", posts);
             resolve(posts);
           });
       });

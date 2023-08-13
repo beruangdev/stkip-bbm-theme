@@ -1,6 +1,6 @@
 <div class="relative flex items-start space-x-2 hover:scale-[1.02] hover:translate-y-[-0.15rem] duration-300">
   <a :href="post.link" class="w-1/4 max-w-[7rem] pt-3 md:pt-0 h-full">
-    <img :src="post.img" :data-opt-src="post.img" alt="Post Thumbnail" class="rounded-md w-full object-cover object-center aspect-square" :srcset="post.imgsrcset" />
+    <img :src="post.img" width="150" height="150" :data-opt-src="post.img" alt="Post Thumbnail" class="rounded-md w-full object-cover object-center aspect-square" :srcset="post.imgsrcset" />
   </a>
   <div class="w-3/4 flex flex-col justify-between">
     <a :href="post.link" class="no-underline">
