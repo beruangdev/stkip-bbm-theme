@@ -30,7 +30,7 @@
 </head>
 
 
-<body <?php body_class('flex flex-col') ?>>
+<body <?php body_class('flex flex-col') ?> x-data x-cloak>
     <?php wp_body_open(); ?>
 
     <?php if (wp_is_mobile()) : ?>
@@ -39,4 +39,4 @@
         <?= get_template_part('template-parts/component/navbar/navbar-desktop') ?>
     <?php endif; ?>
 
-    <main class="flex-grow w-full" x-cloak>
+    <main class="flex-grow w-full">
