@@ -21,7 +21,7 @@
 <html lang="en">
 
 <head>
-<meta charset="<?php bloginfo('charset'); ?>">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -40,6 +40,8 @@
         <link rel="canonical" href="<?php the_permalink(); ?>">
     <?php endif; ?>
 
+    <?php wp_head() ?>
+    
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
 </head>
 
