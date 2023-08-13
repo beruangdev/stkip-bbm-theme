@@ -26,11 +26,11 @@ $announcements_query = new WP_Query($args);
   <?php if ($announcements_query->have_posts()) : ?>
     <?php while ($announcements_query->have_posts()) : $announcements_query->the_post(); ?>
       <div class="relative flex md:flex-row space-x-2 p-2 rounded-md hover:bg-primary-700 hover:dark:bg-primary-900">
-        <a href="<?= esc_url(get_permalink()); ?>" class="w-1/4 grid place-items-center">
+        <a href="<?= esc_url(get_permalink()); ?>" title="<?php the_title_attribute(); ?>" class="w-1/4 max-w-[7rem] pt-3 md:pt-0">
           <?php if (has_post_thumbnail()) : ?>
-            <?php the_post_thumbnail('medium', ['class' => 'rounded-md']); ?>
+            <?= the_post_thumbnail('medium', ['class' => 'rounded-lg w-full aspect-square object-cover object-center']); ?>
           <?php else : ?>
-            <img src="https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="tailwind logo" class="rounded-md" />
+            <img src="https://via.placeholder.com/150" class="rounded-lg w-full aspect-square object-cover object-center" alt="Placeholder Image">
           <?php endif; ?>
         </a>
         <div class="w-3/4 flex flex-col justify-between">

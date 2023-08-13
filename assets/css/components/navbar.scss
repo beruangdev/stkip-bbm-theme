@@ -17,7 +17,7 @@
       @apply text-white;
 
       &:hover {
-        @apply text-blue-300;
+        @apply text-primary-300;
       }
     }
 
@@ -25,7 +25,7 @@
       @apply text-gray-900;
 
       &:hover {
-        @apply text-blue-500;
+        @apply text-primary-500;
       }
     }
   }
@@ -51,7 +51,7 @@ ul.menu > .menu-item > a, ul.menu > .menu-item > svg {
         @apply text-white;
 
         &:hover {
-          @apply bg-blue-700;
+          @apply bg-primary-700;
         }
       }
 
@@ -59,7 +59,7 @@ ul.menu > .menu-item > a, ul.menu > .menu-item > svg {
         @apply text-gray-900;
 
         &:hover {
-          @apply text-blue-500;
+          @apply text-primary-500;
         }
       }
     }
@@ -78,7 +78,7 @@ ul.menu > .menu-item > a, ul.menu > .menu-item > svg {
             @apply text-white;
 
             &:hover {
-              @apply bg-blue-700;
+              @apply bg-primary-700;
             }
           }
 
@@ -86,7 +86,7 @@ ul.menu > .menu-item > a, ul.menu > .menu-item > svg {
             @apply text-gray-900;
 
             &:hover {
-              @apply text-blue-500;
+              @apply text-primary-500;
             }
           }
         }
@@ -109,7 +109,7 @@ ul.menu > .menu-item > a, ul.menu > .menu-item > svg {
         a {
           &.dark {
             &:hover {
-              @apply bg-blue-700;
+              @apply bg-primary-700;
             }
           }
         }
@@ -123,7 +123,7 @@ ul.menu > .menu-item > a, ul.menu > .menu-item > svg {
           a {
             &.dark {
               &:hover {
-                @apply bg-blue-700;
+                @apply bg-primary-700;
               }
             }
           }

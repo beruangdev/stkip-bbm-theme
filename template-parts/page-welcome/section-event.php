@@ -11,8 +11,8 @@ $events_query = new WP_Query($args);
     <h5>Event Kampus</h5>
 
     <a href="<?php echo esc_url(get_post_type_archive_link('event')); ?>" class="group flex items-center gap-2 duration-200  hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-3 py-1 dark:hover:bg-background-950/30 focus:outline-none dark:focus:ring-background-800 no-underline">
-      <h5 class="group-hover:text-white text-primary-950">Lainnya</h5>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 group-hover:text-white text-primary-950 dark:text-white">
+      <h5 class="group-hover:text-white text-primary-950 dark:text-white dark:group-hover:text-white/60">Lainnya</h5>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 group-hover:text-white text-primary-950 dark:text-white dark:group-hover:text-white/60">
         <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
       </svg>
     </a>
@@ -33,7 +33,7 @@ $events_query = new WP_Query($args);
                 <div class="absolute inset-0 h-full opacity-10 group-hover:opacity-100 duration-300 ">
                   <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="no-underline">
                     <?php if (has_post_thumbnail()) : ?>
-                      <?= get_the_post_thumbnail(get_the_ID(), 'medium', ['class' => 'rounded-lg object-cover object-top inset-0 h-full w-full']); ?>
+                      <?= the_post_thumbnail('medium', ['class' => 'rounded-lg object-cover object-top inset-0 h-full w-full']); ?>
                     <?php else : ?>
                       <img src="https://via.placeholder.com/150" class="rounded-lg object-cover object-top inset-0 h-full w-full" alt="Placeholder Image">
                     <?php endif; ?>

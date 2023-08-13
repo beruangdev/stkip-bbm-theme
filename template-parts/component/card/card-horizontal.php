@@ -9,16 +9,15 @@
     </div>
   <?php endif; ?>
 
-  <div class="post-thumbnail">
-    <a href="<?= esc_url(get_permalink()); ?>" title="<?php the_title_attribute(); ?>">
-      <?php if (has_post_thumbnail()) : ?>
-        <?= get_the_post_thumbnail(get_the_ID(), 'medium', ['class' => 'rounded-lg w-28 md:w-40 aspect-[16/12] object-cover object-center']); ?>
-      <?php else : ?>
-        <img src="https://via.placeholder.com/150" class="rounded-lg w-28 md:w-40 aspect-[16/12] object-cover object-center" alt="Placeholder Image">
-      <?php endif; ?>
-    </a>
-  </div>
-  <div class="flex-1 flex flex-col justify-between">
+
+  <a href="<?= esc_url(get_permalink()); ?>" title="<?php the_title_attribute(); ?>" class="w-1/4 max-w-[7rem] pt-3 md:pt-0">
+    <?php if (has_post_thumbnail()) : ?>
+      <?= the_post_thumbnail('medium', ['class' => 'rounded-lg w-full aspect-square object-cover object-center']); ?>
+    <?php else : ?>
+      <img src="https://via.placeholder.com/150" class="rounded-lg w-full aspect-square object-cover object-center" alt="Placeholder Image">
+    <?php endif; ?>
+  </a>
+  <div class="w-3/4 flex flex-col justify-between">
     <div>
       <?php if (has_category()) : ?>
         <div class="flex gap-2 items-center">

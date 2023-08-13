@@ -1,21 +1,21 @@
 <!-- file: archive.php -->
 <?php get_header(); ?>
-<div class="container mt-20">
+<div class="container mt-20 pt-4">
   <div class="mb-6">
     <?php if (is_post_type_archive("post")) : ?>
-      <h1><?php post_type_archive_title(); ?></h1>
+      <h2>News</h2>
     <?php elseif (is_post_type_archive('announcement')) : ?>
-      <h1><?php post_type_archive_title(); ?></h1>
+      <h2><?php post_type_archive_title(); ?></h2>
     <?php elseif (is_post_type_archive('video')) : ?>
-      <h1><?php post_type_archive_title(); ?></h1>
+      <h2><?php post_type_archive_title(); ?></h2>
     <?php elseif (is_post_type_archive('event')) : ?>
-      <h1><?php post_type_archive_title(); ?></h1>
+      <h2><?php post_type_archive_title(); ?></h2>
     <?php elseif (is_category()) : ?>
-      <h1><?php single_cat_title(); ?></h1>
+      <h2><?php single_cat_title(); ?></h2>
     <?php elseif (is_tag()) : ?>
-      <h1><?php single_tag_title(); ?></h1>
+      <h2><?php single_tag_title(); ?></h2>
     <?php else : ?>
-      <h1>Archive.php</h1>
+      <h2>Archive.php</h2>
     <?php endif; ?>
   </div>
 
