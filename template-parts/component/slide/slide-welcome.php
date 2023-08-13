@@ -16,7 +16,7 @@ foreach ($slide_photos as $slide_photo) {
       <div class="swiper-slide relative">
         <img src="<?= $slide_url ?>" alt="" class="aspect-[14/16] md:aspect-[16/7] object-cover object-center w-full h-full">
         <!-- <div class="absolute w-full h-[40%] bottom-0 left-0 bg-gradient-to-b from-transparent to-white dark:from-transparent dark:to-background-900/100"></div> -->
-        <div class="absolute w-full h-[40%] bottom-0 left-0 bg-gradient-to-b from-transparent via-background-75/90 to-background-75 dark:via-background-900/90  dark:to-background-900/100"></div>
+        <div class="absolute w-full h-[40%] bottom-0 left-0 bg-gradient-to-b from-transparent via-background-75/90 to-background-75 dark:via-background-950/90 via-70%  dark:to-background-950 to-90%"></div>
       </div>
     <?php endforeach; ?>
   </div>
